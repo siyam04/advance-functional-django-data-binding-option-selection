@@ -19,8 +19,7 @@ from django.urls import path, include
 from django.conf.urls.static import static
 
 
-# from .views import home
-# from .views import DevelopersView
+from .views import HomeView
 
 
 urlpatterns = [
@@ -28,7 +27,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # Home
-    # path('', home, name='home'),
+    path('', HomeView.as_view(), name='home'),
 
     # App1 (custom_users)
     # path('', include('custom_users.urls', namespace='custom_users')),
