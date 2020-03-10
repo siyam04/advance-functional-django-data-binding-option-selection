@@ -20,6 +20,7 @@ from django.conf.urls.static import static
 
 
 from .views import HomeView
+from product.views import ProductList
 
 
 urlpatterns = [
@@ -29,11 +30,10 @@ urlpatterns = [
     # Home
     path('', HomeView.as_view(), name='home'),
 
-    # App1 (custom_users)
-    # path('', include('custom_users.urls', namespace='custom_users')),
-
-    # Developers
-    # path('developers/', DevelopersView.as_view(), name='developers'),
+    # App1 (product)
+    path('', include('product.urls', namespace='product')),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
