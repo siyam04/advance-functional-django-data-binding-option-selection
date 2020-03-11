@@ -1,25 +1,97 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Product List</title>
-</head>
+{% extends 'base.html' %}
 
-<body>
-    <h1>Product List</h1>
-    <hr>
 
-    {% for product in object_list %}
-        <ul>
-            <li>{{ product }}</li>
-            <img src="{{ product.image.url }}" alt="image" width="200" height="200">
-        </ul>
+{% block content %}
 
-    {% endfor %}
+    <!--Heading-->
 
-</body>
-</html>
+    {#    <br>#}
+    {#    <h1><span class="blue">&lt;</span>Products<span class="blue">&gt;</span> <span class="yellow">List</span></h1>#}
+    {#    <br>#}
+    {#    <h2>Created with love by <a href="https://www.linkedin.com/in/abdullah-al-galib/" target="_blank">Siyam Al Galib</a></h2>#}
 
+    <!--Filter-->
+
+    <div class="col-lg-12">
+        <form action="{% url 'product:search' %}" method="post">
+        {% csrf_token %}
+
+            <div class="col-lg-3">
+                <br><br>
+                <div class="form-group">
+                    <label for="sel1">BRAND</label>
+                    <select name="brand" class="form-control">
+                        <option value="">...</option>
+                        {% for brand in brands %}
+                            <option  value="{{ brand.id }}">{{ brand }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <br><br>
+                <div class="form-group">
+                    <label for="sel1">CATEGORY</label>
+                    <select name="category" class="form-control">
+                        <option value="">...</option>
+                        {% for category in categories %}
+                            <option  value="{{ category.id }}">{{ category }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <br><br>
+                <div class="form-group">
+                    <label for="sel1">STATUS</label>
+                    <select name="status" class="form-control">
+                        <option value="">...</option>
+                        {% for status in statuses %}
+                            <option  value="{{ status.0 }}">{{ status.1 }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <br><br><br>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-danger">Submit</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+
+
+    <!--Table-->
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th><h1>Name</h1></th>
+            <th><h1>Price</h1></th>
+            <th><h1>Status</h1></th>
+            <th><h1>Category</h1></th>
+            <th><h1>Brand</h1></th>
+            <th><h1>Description</h1></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {% for product in products %}
+            <tr>
+                <td>{{ product.name }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.status }}</td>
+                <td>{{ product.category }}</td>
+                <td>{{ product.brand }}</td>
+                <td>{{ product.description }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+
+{% endblock %}

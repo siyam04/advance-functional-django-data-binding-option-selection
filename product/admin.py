@@ -7,7 +7,7 @@ from .models import (
     Category,
     Brand,
     Product,
-
+    QueryStrings
 )
 
 # 'Group' class hiding from the superuser
@@ -52,9 +52,10 @@ class ProductAdmin(admin.ModelAdmin):
     )
 
 
+
 # Registering databases
 # admin.site.register(Category, CategoryAdmin)
 # admin.site.register(Brand, BrandAdmin)
-# admin.site.register(Product, ProductAdmin)
+admin.site.register(QueryStrings)
 
 

@@ -54,3 +54,10 @@ class Product(models.Model):
         return self.name
 
 
+class QueryStrings(models.Model):
+    data = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.data
+
+

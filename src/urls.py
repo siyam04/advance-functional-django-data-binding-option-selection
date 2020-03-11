@@ -18,9 +18,7 @@ from django.conf import settings
 from django.urls import path, include
 from django.conf.urls.static import static
 
-
-from .views import HomeView
-from product.views import ProductList
+# from .views import HomeView
 
 
 urlpatterns = [
@@ -28,7 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # Home
-    path('', HomeView.as_view(), name='home'),
+    # path('', HomeView.as_view(), name='home'),
 
     # App1 (product)
     path('', include('product.urls', namespace='product')),
