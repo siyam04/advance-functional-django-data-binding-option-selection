@@ -54,7 +54,7 @@ class ProductAdmin(admin.ModelAdmin):
 
 @admin.register(QueryStrings)
 class QueryStringsAdmin(admin.ModelAdmin):
-    list_display = ['id', 'data']
+    list_display = ['id', 'data', 'report']
 
 
 

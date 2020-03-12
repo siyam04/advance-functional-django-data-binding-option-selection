@@ -57,6 +57,7 @@ class Product(models.Model):
 # filtering
 class QueryStrings(models.Model):
     data = models.CharField(max_length=200)
+    report = models.TextField(max_length=500)
 
     class Meta:
         ordering = ['-id']
