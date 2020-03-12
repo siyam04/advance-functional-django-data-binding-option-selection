@@ -1,19 +1,18 @@
-.idea/
-.vscode/
-venv/
-db.sqlite3
-
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
-#*.py[cod]
+*.py[cod]
 *$py.class
+media/
+settings.py
+
+.idea/
 
 # C extensions
 *.so
 
 # Distribution / packaging
 .Python
+env/
 build/
 develop-eggs/
 dist/
@@ -25,11 +24,9 @@ lib64/
 parts/
 sdist/
 var/
-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
-MANIFEST
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -44,15 +41,13 @@ pip-delete-this-directory.txt
 # Unit test / coverage reports
 htmlcov/
 .tox/
-.nox/
 .coverage
 .coverage.*
 .cache
 nosetests.xml
 coverage.xml
-*.cover
+*,cover
 .hypothesis/
-.pytest_cache/
 
 # Translations
 *.mo
@@ -61,7 +56,6 @@ coverage.xml
 # Django stuff:
 *.log
 local_settings.py
-
 
 # Flask stuff:
 instance/
@@ -76,12 +70,8 @@ docs/_build/
 # PyBuilder
 target/
 
-# Jupyter Notebook
+# IPython Notebook
 .ipynb_checkpoints
-
-# IPython
-profile_default/
-ipython_config.py
 
 # pyenv
 .python-version
@@ -89,34 +79,29 @@ ipython_config.py
 # celery beat schedule file
 celerybeat-schedule
 
-# SageMath parsed files
-*.sage.py
+# dotenv
+.env
 
-# Environments
-#.env
-#.venv
-#env/
-#
-#ENV/
-#env.bak/
-#venv.bak/
+# virtualenv
+.venv/
+venv/
+ENV/
 
 # Spyder project settings
 .spyderproject
-.spyproject
 
 # Rope project settings
 .ropeproject
 
-# mkdocs documentation
-/site
+# Database stuff
+*.sqlite3
+migrations/
+db.sqlite3
 
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
+# Atom config file
+.editorconfig
 
-# Pyre type checker
-.pyre/
-
-*.vscode/
+# Other unwanted stuff
+.idea
+.DS_Store
+.DS_STORE
