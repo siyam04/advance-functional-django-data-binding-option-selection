@@ -54,8 +54,12 @@ class Product(models.Model):
         return self.name
 
 
+# filtering
 class QueryStrings(models.Model):
     data = models.CharField(max_length=200)
+
+    class Meta:
+        ordering = ['-id']
 
     def __str__(self):
         return self.data

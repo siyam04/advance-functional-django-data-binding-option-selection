@@ -1,4 +1,4 @@
-from django.urls import path, include
+from django.urls import path
 
 from .views import products, search
 
@@ -7,10 +7,10 @@ app_name = 'product'
 
 urlpatterns = [
 
-    # all products CBV
+    # CBV
     # path('product-list', ProductList.as_view(), name='product-list'),
 
-    # all products FBV
+    # FBV
     path('', products, name='products'),
 
     path('<int:query_id>', products, name='products_query_id'),
