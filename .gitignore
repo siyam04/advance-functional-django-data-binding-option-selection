@@ -1,7 +1,7 @@
 .idea/
 .vscode/
-*venv/
-*db.sqlite3
+#*venv/
+#*db.sqlite3
 
 
 # Byte-compiled / optimized / DLL files
@@ -94,7 +94,7 @@ celerybeat-schedule
 
 # Environments
 .env
-.venv
+.venv/
 env/
 
 ENV/
@@ -120,3 +120,4 @@ dmypy.json
 .pyre/
 
 *.vscode/
+static/
